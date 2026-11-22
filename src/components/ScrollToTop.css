@@ -1,0 +1,38 @@
+/* ScrollToTop.css */
+.scroll-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(28, 20, 13, 0.85);
+  border: 1px solid rgba(221, 184, 97, 0.4);
+  color: #DDB861;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transform: translateY(20px) scale(0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.scroll-top.visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-top:hover {
+  background: linear-gradient(135deg, rgba(221, 184, 97, 0.18), rgba(176, 127, 34, 0.08));
+  border-color: #DDB861;
+  color: #F5E9CE;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -8px rgba(176, 127, 34, 0.45);
+}
+
+@media (max-width: 540px) {
+  .scroll-top { bottom: 18px; left: 18px; width: 40px; height: 40px; }
+}

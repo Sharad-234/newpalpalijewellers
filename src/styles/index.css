@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Global resets / typography === */
+@layer base {
+  :root {
+    --color-bg: #0F0A06;
+    --color-surface: #1C140D;
+    --color-surface-2: #2A1F15;
+    --color-cream: #F7F1E6;
+    --color-gold: #DDB861;
+    --color-gold-deep: #B07F22;
+    --color-gold-dark: #6E4D14;
+    --color-brown: #4A3A2A;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-cream);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-cream);
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background: rgba(221, 184, 97, 0.3);
+    color: #FBF6EC;
+  }
+}
+
+/* === Reusable utility components === */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-14;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply text-gold-300 tracking-[0.35em] uppercase text-xs md:text-sm font-medium;
+  }
+
+  .heading-xl {
+    @apply font-serif text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.05];
+  }
+
+  .heading-lg {
+    @apply font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-[1.1];
+  }
+
+  .heading-md {
+    @apply font-serif text-2xl md:text-3xl lg:text-4xl font-medium;
+  }
+
+  .body-lead {
+    @apply text-cream/70 text-base md:text-lg leading-relaxed;
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #DDB861 0%, #F5E9CE 35%, #B07F22 70%, #6E4D14 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gold-divider {
+    @apply inline-block h-px w-12 bg-gradient-to-r from-transparent via-gold-300 to-transparent;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-br from-gold-200 via-gold-300 to-gold-600 text-espresso-900 text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-gold-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold-400/60 text-gold-200 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-gold-400 hover:text-espresso-900 hover:-translate-y-0.5;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-3 text-gold-300 text-xs md:text-sm tracking-[0.35em] uppercase font-medium;
+  }
+}
+
+/* === Custom scrollbar === */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0A06;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #B07F22, #6E4D14);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #DDB861, #B07F22);
+}
+
+/* === Image placeholder shimmer (before image loads) === */
+.img-shimmer {
+  background: linear-gradient(110deg, #1C140D 8%, #2A1F15 18%, #1C140D 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "new-palpali-sun-chadi-pasal",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Premium jewellery business showcase website for New Palpali Sun Chadi Pasal, Bhaluwang, Dang, Nepal",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
+  }
+}
